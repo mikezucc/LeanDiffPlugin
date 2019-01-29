@@ -65,8 +65,7 @@ var activeOwner = "";
 var owners = {};
 var titles = [];
 
-function creamHateTheMoney() {
-    console.log("CREAM HATE THE MOJNEY");
+function selectOwner() {
     var dropDownDiv = document.getElementById("theDropDizzle");
     if (dropDownDiv.classList.contains("show")) {
       var dropDizzle = document.getElementById("theDropDizzle");
@@ -123,8 +122,6 @@ function creamHateTheMoney() {
     }
 }
 
-console.log("CREAM GET THE MONEY 2");
-
 var dropdownURL = chrome.extension.getURL("dropdown.html");
 
 var xhttp = new XMLHttpRequest();
@@ -134,9 +131,9 @@ xhttp.onreadystatechange = function() {
       var filesChangedActionElementDiv = document.getElementsByClassName("phui-header-action-links")[1];
       filesChangedActionElementDiv.insertBefore($dropdownHTML, filesChangedActionElementDiv.nextSibling);
 
-      var butt = document.getElementById("hideMeFromAllSeeingChrome");
-      console.log(butt);
-      butt.addEventListener("click", creamHateTheMoney);
+      var hideMe = document.getElementById("hideMeFromAllSeeingChrome");
+      console.log(hideMe);
+      butt.addEventListener("click", selectOwner);
     } else if (this.status > 400) {
         console.log('files not found');
     }
