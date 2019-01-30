@@ -3,10 +3,25 @@ Filter by component owners for your Phabricator differential
 
 ## Getting Started
 
-1. Set your Phabricator host with a __wildcard path__ : i.e. `https://phabricator.stackdiffs.com/D*`
+1. In `manifest.json`, add your phabricator host names to the `matches` array with a __wildcard path__ : i.e. `https://phabricator.stackdiffs.com/D*`
 2. Add this as an unpacked plugin to your Chrome
 3. Go to a differential
 4. Choose diff by owner
+
+your `manifest.json` should contain a `matches` like
+
+```json
+ "content_scripts": [
+       {
+         "matches": ["https://phabricator.stackdiffs.com/D*"],
+         "css": [],
+         "js": ["contentScript.js"],
+         "run_at": "document_idle",
+         "all_frames": true
+       }
+     ]
+```
+
 
 ## Why?
 
