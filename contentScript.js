@@ -133,7 +133,7 @@ xhttp.onreadystatechange = function() {
 
       var hideMe = document.getElementById("hideMeFromAllSeeingChrome");
       console.log(hideMe);
-      butt.addEventListener("click", selectOwner);
+      hideMe.addEventListener("click", selectOwner);
     } else if (this.status > 400) {
         console.log('files not found');
     }
